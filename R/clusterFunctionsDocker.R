@@ -105,7 +105,7 @@ makeClusterFunctionsDocker = function(image, docker.args = character(0L), image.
 
   listJobsRunning = function(reg) {
     assertRegistry(reg, writeable = FALSE)
-    listJobs(reg, sprintf("--filter 'user=%s'", user))
+    listJobs(reg, sprintf("--filter 'label=user=%s'", user))
   }
 
   makeClusterFunctions(name = "Docker", submitJob = submitJob, killJob = killJob, listJobsRunning = listJobsRunning,
